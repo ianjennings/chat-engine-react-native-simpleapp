@@ -13,18 +13,6 @@ import ChatList from "./components/ChatList";
 import LoginScreen from "./screens/Login";
 import Chat from "./screens/Chat";
 
-// import {MessageEntry} from "chat-engine-react-native";
-// import {MessageList} from "chat-engine-react-native";
-// import {UserList} from "chat-engine-react-native";
-
-// const ChatEngine = ChatEngineCore.create({
-//   publishKey: "pub-c-0fb6e2c9-c3fa-4dbc-9c8d-86a3813c73c8",
-//   subscribeKey: "sub-c-e3f6d3fe-934e-11e7-a7b2-42d877d8495e"
-// }, {
-//   endpoint: 'http://eea61ff4.ngrok.io/insecure',
-//   globalChannel: 'chat-engine-global-channel',
-// });
-
 const ChatEngine = ChatEngineCore.create(
   {
     publishKey: 'pub-c-d8599c43-cecf-42ba-a72f-aa3b24653c2b',
@@ -65,8 +53,7 @@ export default class App extends React.Component {
       {
         name: username,
         signedOnTime: now
-      },
-      "auth-key"
+      }
     );
 
     ChatEngine.on("$.ready", data => {
